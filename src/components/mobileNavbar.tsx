@@ -1,5 +1,5 @@
 import Hamburger from 'hamburger-react'
-import { useCallback, useLayoutEffect, useState } from "react"
+import { useCallback, useEffect, useLayoutEffect, useState } from "react"
 import { AnimatePresence, motion } from 'framer-motion'
 import { Li } from './navbar'
 import { Link } from 'react-router-dom'
@@ -11,6 +11,15 @@ export default function MobileNavbar() {
     const [isOpen, setOpen] = useState(false)
 
     const [ref, exceptRef] = useExit<boolean>(isOpen, setOpen, false)
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflowY = 'hidden'
+        } else {
+            document.body.style.overflowY = 'unset'
+        }
+    }, [isOpen])
+
 
     return (
         <>
@@ -45,11 +54,13 @@ export default function MobileNavbar() {
                             <Li black className="hover:text-black">
                                 <span>Sample Reports</span>
                                 <ul className="pl-1 pt-2 w-full flex-col space-y-2 items-center pb-2">
-                                    <Li black className="flex items-center">
-                                        <AiOutlineRight size="15" className="pt-1" /><a href="https://api.allreports.tools/page-carfax-example/" target={"_blank"} className="!text-black">Carfax</a>
+                                    <Li black to="/example/carfax" className="!text-black !hover:text-black flex space-y-1 items-center" >
+                                        <AiOutlineRight size="15" className="pt-1" />
+                                        <span>Carfax</span>
                                     </Li>
-                                    <Li black className="flex items-center">
-                                        <AiOutlineRight size="15" className="pt-1" /><a href="https://api.allreports.tools/page-autocheck-example/" target="_blank" className="!text-black">AutoCheck</a>
+                                    <Li black to="/example/autocheck" className="!text-black !hover:text-black flex space-y-1 items-center" >
+                                        <AiOutlineRight size="15" className="pt-1" />
+                                        <span >AutoCheck</span>
                                     </Li>
                                 </ul>
                             </Li>

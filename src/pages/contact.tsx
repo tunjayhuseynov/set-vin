@@ -7,16 +7,16 @@ export default function Contact() {
             <div className="grid md:grid-cols-2 gap-8 w-[500px] items-center">
                 <div className="flex flex-col items-center space-x-3 text-base">
                     <div className="flex items-center space-x-2">
-                        <BsFillTelephoneFill className="text-blue-500" />
+                        <BsFillTelephoneFill className="text-primary" />
                         <div className="font-semibold">Whatsapp/Telegram/Viber:</div>
                     </div>
                     <div>
-                        <div>+(994)-50-649-16-23</div>
+                        <div>+(994)-51-940-88-72</div>
                     </div>
                 </div>
                 <div className="flex flex-col items-center space-x-3 text-base">
                     <div className="flex items-center space-x-2">
-                        <GrMail className="text-blue-500" />
+                        <GrMail className="text-primary" />
                         <div className="font-semibold">E-Mail:</div>
                     </div>
                     <div>

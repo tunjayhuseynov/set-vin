@@ -6,17 +6,33 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
+    "rewrites": [{
         "source": "/api/CreateOrder",
-        "function": "CreateOrder"
+        "function": "CreateOrder",
+        "region": "us-central1"
       },
       {
         "source": "/api/Report",
-        "function": "Report"
+        "function": "Report",
+        "region": "us-central1"
       },
       {
-        "source": "**",
+        "source": "/api/ReportData",
+        "function": "ReportData",
+        "region": "us-central1"
+      },
+      {
+        "source": "/api/CheckReport",
+        "function": "CheckReport",
+        "region": "us-central1"
+      },
+      {
+        "source": "/api/GeneratePDF",
+        "function": "GeneratePDF",
+        "region": "us-central1"
+      },
+      {
+        "source": "!/@(api)/**",
         "destination": "/index.html"
       }
     ]
